@@ -1,0 +1,27 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: conversor
+  namespace: jornada-devops
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: web
+  template:
+    metadata:
+      labels:
+        app: web
+    spec:
+      containers:
+      - name: site
+        image: emanuelfds/conversao-temperatura:v1
+        resources:
+          limits:
+            memory: 64Mi
+            cpu: "0.4"
+          requests:
+            memory: 32Mi
+            cpu: "0.2"
+        ports:
+        - containerPort: 80
