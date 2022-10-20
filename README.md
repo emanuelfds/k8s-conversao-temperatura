@@ -91,7 +91,7 @@ spec:
 
 $ kubectl apply -f deployment.yaml
 
-# Criando o Port-Forward para o service
+### Criando o Port-Forward para o service
 
 $ kubectl port-forward svc/web-page 8080:80 --namescpace jornada-devops
 
